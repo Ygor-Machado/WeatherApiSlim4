@@ -12,9 +12,8 @@ use Psr\Http\Message\ServerRequestInterface;
 class WeatherControllerTest extends TestCase
 {
 
-    // Não consegui fazer funcionar esse teste
-
     /**
+     * Testa o método index() quando é bem-sucedido.
      * @throws Exception
      */
     public function testIndexSuccess()
@@ -38,6 +37,10 @@ class WeatherControllerTest extends TestCase
 
     }
 
+    /**
+     * Testa o método index() quando ocorre um erro.
+     * @throws Exception
+     */
     public function testIndexError()
     {
         $weatherControllerMock = $this->createMock(WeatherController::class);

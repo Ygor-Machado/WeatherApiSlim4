@@ -7,6 +7,10 @@ use PHPUnit\Framework\TestCase;
 
 class ApiControllerTest extends TestCase
 {
+
+    /**
+     * Testa o método get() da ApiController quando a chamada à API é feita com sucesso.
+     */
     public function testApiSuccess()
     {
 
@@ -38,6 +42,9 @@ class ApiControllerTest extends TestCase
         $this->assertEquals('Dados simulados da API', $result['data']);
     }
 
+    /**
+     * Testa o método get() da ApiController quando a chamada à API resulta em erro.
+     */
     public function testApiError()
     {
         $apiKey = '487f40f29e744ee685640523240102';

@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use Psr\Http\Message\ResponseInterface;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -9,11 +10,21 @@ use Twig\Error\SyntaxError;
 class WeatherController extends Controller
 {
     /**
-     * @throws RuntimeError
-     * @throws SyntaxError
-     * @throws LoaderError
+     * Exibe o tempo de uma cidade especifica.
+     *
+     * Este método recebe uma solicitação e uma resposta, obtém os dados da previsão do tempo usando a classe ApiController,
+     * formata os dados e os passa para a visualização Twig para renderização.
+     *
+     * @param mixed $request O objeto de solicitação (ServerRequestInterface).
+     * @param mixed $response O objeto de resposta (ResponseInterface).
+     *
+     * @throws RuntimeError Em caso de erro durante a execução do Twig.
+     * @throws SyntaxError Em caso de erro de sintaxe durante a execução do Twig.
+     * @throws LoaderError Se o carregador do Twig encontrar um erro ao carregar modelos.
+     *
+     * @return ReponseInterface Retorna o conteúdo renderizado da visualização.
      */
-    public function index($request, $response)
+    public function index($request, $response): ResponseInterface
     {
 
         // Pega o valor de city, ou Franca ou qualquer outra cidade que colocar aqui como padrão

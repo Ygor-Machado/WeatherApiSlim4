@@ -4,6 +4,11 @@ namespace app\controllers;
 
 class ApiController extends Controller
 {
+    /**
+     * @param string $city A cidade para a qual deseja obter a previsão do tempo
+     * @param int $days Quantidade de dias para a previsão do tempo
+     * @return array Retorna um array com os dados da previsão do tempo.
+     */
     public  function get($city, $days = 1): array
     {
         // Inicializa uma sessão cURL
