@@ -52,23 +52,23 @@ class WeatherController extends Controller
         // Cria um array com os dados da previsão do tempo
         $forecast = array_map(function ($day) {
             return [
-                'info' => null,
-                'date' => $day['date'],
-                'condition' => $day['day']['condition']['text'],
+                'info'           => null,
+                'date'           => $day['date'],
+                'condition'      => $day['day']['condition']['text'],
                 'condition_icon' => $day['day']['condition']['icon'],
-                'max_temp' => $day['day']['maxtemp_c'],
-                'min_temp' => $day['day']['mintemp_c'],
-                'max_wind' => $day['day']['maxwind_kph'],
-                'humidity' => $day['day']['avghumidity'],
+                'max_temp'       => $day['day']['maxtemp_c'],
+                'min_temp'       => $day['day']['mintemp_c'],
+                'max_wind'       => $day['day']['maxwind_kph'],
+                'humidity'       => $day['day']['avghumidity'],
             ];
         }, $data['forecast']['forecastday']);
 
         // Renderiza a view passando os dados para ela
         return $this->getTwig()->render($response, $this->setView('api/index'), [
             'location' => $location,
-            'current' => $current,
+            'current'  => $current,
             'forecast' => $forecast,
-            'days'    => $days,
+            'days'     => $days,
         ]);
 
     }

@@ -52,9 +52,9 @@ class ApiControllerTest extends TestCase
             ->method('get')
             ->with($apiKey, $city, $days)
             ->willReturn([
-                'status' => 'error',
+                'status'  => 'error',
                 'message' => 'Erro simulado na requisição',
-                'data' => null,
+                'data'    => null,
             ]);
 
         $result = $apiControllerMock->get($apiKey, $city, $days);

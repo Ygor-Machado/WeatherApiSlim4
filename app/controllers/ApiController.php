@@ -28,9 +28,9 @@ class ApiController extends Controller
 
         // Retorna um array com os dados
         return [
-            'status' => $err ? 'error' : 'success',
+            'status'  => $err ? 'error' : 'success',
             'message' => $err,
-            'data' => $err ? null : $response,
+            'data'    => $err ? null : $response,
         ];
     }
 }
