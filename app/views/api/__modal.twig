@@ -1,0 +1,47 @@
+<div class="card my-2 p-3">
+    <div>
+        {{ modal.info }}
+    </div>
+
+    <div class="d-flex align-items-center">
+
+        <!-- icon -->
+        <div class="me-4">
+            <img src="{{ modal.condition_icon }}" class="img-fluid d-block">
+        </div>
+        {% if modal.temperature is not empty %}
+            <div class="me-4">
+                <h3>{{ modal.temperature }}&deg;</h3>
+            </div>
+        {% endif %}
+        <div class="me-4">
+            {{ modal.condition }}
+        </div>
+
+        {% if modal.max_temp is not empty %}
+            <div class="me-4">
+                Dia: {{ modal.date }}
+            </div>
+            <div class="me-4">
+                Temperatura máxima: {{ modal.max_temp }}&deg;
+            </div>
+            <div class="me-4">
+                Temperatura mínima: {{ modal.min_temp }}&deg;
+            </div>
+        {% endif %}
+
+        {% if modal.max_wind is not empty %}
+            <div class="me-4">
+                Velocidade Máxima do vento: {{ modal.max_wind}} km/h
+            </div>
+        {% endif %}
+
+        {% if modal.humidity is not empty %}
+            <div class="me-4">
+                Umidade: {{ modal.humidity }}%
+            </div>
+        {% endif %}
+
+    </div>
+
+</div>

@@ -1,0 +1,7 @@
+/vendor/
+/composer.phar
+/logs/
+/cache/
+
+.idea/
+*iml
